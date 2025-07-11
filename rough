@@ -16,6 +16,7 @@ function update(){
   minutes=minutes%60;
   hours=hours%24;
  let timeString=`${(hours)}:${(minutes)}:${(seconds)}:${milliseconds}`;
-  //console.log(timeString);
+  console.log(timeString);
+
 
  }
