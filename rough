@@ -1,0 +1,21 @@
+let now=Date.now();
+
+
+let timer=setInterval(update,10);
+
+
+
+function update(){
+  let curretn=Date.now();
+  let elapsed=curretn-now;
+  let seconds=Math.ceil(elapsed/1000);
+  let minutes=Math.ceil(seconds/60);
+  let hours=Math.ceil(minutes/60);
+  let milliseconds=Math.floor((elapsed%1000)/10);
+  seconds=seconds%60;
+  minutes=minutes%60;
+  hours=hours%24;
+ let timeString=`${(hours)}:${(minutes)}:${(seconds)}:${milliseconds}`;
+  //console.log(timeString);
+
+ }
