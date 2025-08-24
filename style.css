@@ -1,102 +1,107 @@
-body{
- display: flex;
- flex-direction: column;
+body {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(255, 158, 40, 0.459);
   font-family: monospace;
-  height: 100%;
+  margin: 0;
+  padding: 1em;
 }
-#box{
-  
- display: flex;
- flex-direction: column;
-   background-color: rgba(255, 255, 255, 0.455);
-  width: 500px;
-  height: 300px;
- padding:  5em;
- gap: .9em;
 
-  border-radius: 13px;
-  box-shadow: 10px 10px 10px rgb(105, 102, 98);
-  border-radius: 30%;
-}
-#clock_box{
+/* Stopwatch container */
+#box {
   display: flex;
-  background-color: rgb(255, 255, 255);
-  font-size: 4.7em;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.455);
+  width: 90%;             /* take full width on small screens */
+  max-width: 500px;       /* cap for larger screens */
+  height: auto;           /* adjust height automatically */
+  padding: 2em;
+  gap: 0.9em;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px rgba(105, 102, 98, 0.6);
+}
+
+/* Clock box */
+#clock_box {
+  display: flex;
+  background-color: #fff;
+  font-size: 3em;        /* smaller base font */
   justify-content: center;
-  text-align: center;
   align-items: center;
- text-shadow: 3px 3px 3px rgb(91, 89, 86);
-  padding: .3em;
-  
+  text-shadow: 3px 3px 3px rgb(91, 89, 86);
+  padding: 0.5em;
   border-radius: 13px;
-  box-shadow: 10px 10px 10px rgb(105, 102, 98);
-}
-.btns{
- 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 1em;
-box-shadow: 10px 10px 10px rgb(176, 170, 163);
-   border-radius: .5em;
-   padding: 1em;
- 
-
-
+  box-shadow: 6px 6px 12px rgba(105, 102, 98, 0.6);
+  word-break: break-word;
+  text-align: center;
 }
 
+/* Buttons container */
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;       /* buttons wrap on smaller screens */
+  gap: 1em;
+  border-radius: 0.5em;
+  padding: 1em;
+  box-shadow: 6px 6px 12px rgba(176, 170, 163, 0.6);
+}
 
-#start{
-  background-color: rgb(38, 109, 18);
-  color: white;
+/* Buttons general */
+button {
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  font-size: .9em;
-  box-shadow: 10px 10px 10px rgb(105, 102, 98);
-  transition: background-color 0.3s ease-out, box-shadow 0.4s ease-out;
+  font-size: 0.9em;
+  color: white;
+  box-shadow: 5px 5px 10px rgba(105, 102, 98, 0.7);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
-#start:hover{
+
+/* Individual button styles */
+#start {
+  background-color: rgb(38, 109, 18);
+}
+#start:hover {
   background-color: rgb(49, 131, 24);
-  box-shadow: 5px 5px 5px rgb(86, 56, 4);
+  box-shadow: 3px 3px 6px rgb(86, 56, 4);
 }
 
-#stop{
+#stop {
   background-color: rgb(209, 33, 17);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-   font-weight: bold;
-  font-size: .9em;
-  box-shadow: 10px 10px 10px rgb(105, 102, 98);
-  transition: background-color 0.3s ease-out, box-shadow 0.4s ease-out;
 }
-#stop:hover{
+#stop:hover {
   background-color: rgb(190, 4, 0);
-  box-shadow: 5px 5px 5px rgb(86, 56, 4);
+  box-shadow: 3px 3px 6px rgb(86, 56, 4);
 }
 
-#reset{
+#reset {
   background-color: rgb(0, 99, 204);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-   font-weight: bold;
-  font-size: .9em;
-   box-shadow: 10px 10px 10px rgb(105, 102, 98);
-  transition: background-color 0.3s ease-out, box-shadow 0.4s ease-out;
 }
-#reset:hover{
+#reset:hover {
   background-color: rgb(0, 79, 184);
-  box-shadow: 5px 5px 5px rgb(86, 56, 4);
+  box-shadow: 3px 3px 6px rgb(86, 56, 4);
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 600px) {
+  #clock_box {
+    font-size: 2.2em;   /* smaller text for phones */
+    padding: 0.7em;
+  }
+  #box {
+    padding: 1.5em;
+  }
+  .btns {
+    flex-direction: column;  /* stack buttons on very small screens */
+  }
+  button {
+    width: 100%;
+    max-width: 250px;
+  }
 }
